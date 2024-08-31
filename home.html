@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Quotes</h1>
+  {% for quote in quotes %}
+    <blockquote>
+      <p>{{ quote.text }}</p>
+      <footer>— {{ quote.author.name }}</footer>
+    </blockquote>
+  {% endfor %}
+  <a href="{% url 'scrape_data' %}">Scrape new quotes</a>
+{% endblock %}
